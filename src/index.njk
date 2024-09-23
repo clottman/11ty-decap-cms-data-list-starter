@@ -1,0 +1,32 @@
+---
+layout: layouts/home.njk
+---
+<div class="solid-bg">
+  
+</div>
+
+<div class="solid-bg items">
+  <ul>
+  {% set shuffled = items | shuffle %}
+  {%- for item in shuffled -%}
+    <li>
+      {% if item["image"] %}
+        {% image item["image"], "", "img-item" %}
+        <div class="item-info">
+      {% else %}
+        <span class="spacer"></span>
+        <div class="item-info no-image">
+      {% endif %}
+          <h3>
+            {{ item["name"] }}
+          </h3>
+      
+        {% if item["description"] %}
+          <p>{{item["description"]}}</p>
+        {% endif %}
+        
+      </div>
+    </li>
+  {%- endfor -%}
+  </ul>
+</div>

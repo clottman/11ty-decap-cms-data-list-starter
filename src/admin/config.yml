@@ -1,0 +1,9 @@
+backend:
+  name: github
+  repo: githubuser/githubrepo
+  branch: main
+  site_domain: https://mysite.com
+  base_url: https://mysite.com
+  auth_endpoint: /api/auth
+media_folder: src/img/cms
+public_folder: src/img/cms/

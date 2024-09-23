@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ title or metadata.title }}</title>
+		<meta property="og:title" content="{{ title or metadata.title }}">
+		
+		<meta name="description" content="{{ description or metadata.description }}">
+
+		<!-- social sharing image here -->
+		<!-- <meta property="og:image" content="">  
+		<meta property="og:image:alt" content=""> -->
+		<meta name="twitter:card" content="summary_large_image">
+
+		{#- Atom and JSON feeds included by default #}
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
+
+		{#- To let folks to know that you used Eleventy to build your site!  #}
+		<meta name="generator" content="{{ eleventy.generator }}">
+
+		<link rel="stylesheet" type="text/css" href="/css/index.css" />
+	</head>
+	<body>
+		<div class="bg-wrap">
+			<div class="bg-content">
+
+				<header class="solid-bg">
+					<h1><a class="header-link" href="{{ metadata.url }}">{{ metadata.title }}</a>:</h1>
+				</header>
+
+				<main id="skip">
+					{{ content | safe }}
+				</main>
+
+				<footer></footer>
+			</div>
+		</div>
+	</body>
+</html>

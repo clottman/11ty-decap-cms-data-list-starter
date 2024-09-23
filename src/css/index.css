@@ -1,0 +1,244 @@
+/* Base CSS selected from 11ty-base-blog and modified */
+
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+  --yellow: hsl(50.1, 94.6%, 71%);
+	--background-watermelon: #eb5e5e;
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+html,
+.bg-content {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+  font-size: 1.1rem;
+}
+html {
+	overflow-y: scroll;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:focus,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+header {
+  padding: 1rem;
+}
+
+main :first-child {
+	margin-top: 0;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+.home-link {
+  text-decoration: none;
+}
+
+/* background stuff
+	 for a tiled image background
+
+
+.bg-wrap {
+  position: relative;
+}
+
+.bg-wrap:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
+  background-image: url(FILL ME IN);
+  background-size: 100%;
+}
+
+.bg-content {
+  position: relative;
+  padding: 2rem;
+}
+*/
+
+header, main {
+	max-width: 40em;
+  margin: auto auto;
+}
+
+header h1 {
+  margin-top: 0;
+}
+
+h2, h3 {
+  margin-bottom: 0;
+}
+h2 + p, h3 + p {
+  margin-top: 0;
+}
+
+.solid-bg {
+  background: var(--yellow);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 2px solid black;
+}
+
+/* end background */
+
+.items li {
+	list-style: none;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	display: flex;
+}
+
+.items li .spacer {
+	width: 150px;
+	display: inline-block;
+}
+
+.items h3 {
+	margin: 0;
+	display: flex;
+	gap: 10px;
+}
+
+.items h3 .instagram {
+	max-height: 1.5rem;
+	width: 24px;
+	flex-shrink: 0;
+}
+
+.item-info {
+	padding-left: 10px;
+}
+
+.item-info.no-image {
+	height: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-item {
+	width: 150px;
+	height: 150px;
+}
+
+.social-icon {
+	height: 100%;
+	max-height: 24px;
+}
+
+@media screen and (max-width: 600px) {
+	.items li {
+		flex-direction: column;
+	}
+	.item-info {
+		padding-top: 10px;
+		padding-left: unset;
+	}
+
+	.item-info h3 {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.item-info h3 a {
+		display: block;
+	}
+
+	.item-info h3 .instagram {
+		max-height: 24px;
+		padding-left: unset;
+		margin-top: 8px;
+	}
+
+	.item-info p {
+		margin-top: 8px;
+	}
+}
+
+.graphics-container {
+	margin-bottom: 60px;
+}
+
+.graphics-container img {
+	margin: auto auto;
+  display: block;
+  width: 600px;
+	max-width: 100%;
+  height: auto;
+}
