@@ -10,6 +10,8 @@ The CMS to add creators without writing code or touching Github is Decap CMS. Ac
 
 If you Publish a post through the CMS, that will trigger a commit to main, and will deploy the site automatically.
 
+Set up the Decap CMS on Cloudflare Pages following the [instructions for i40west/netlify-cms-cloudflare-pages](https://github.com/i40west/netlify-cms-cloudflare-pages). The files you need are already in the repo.
+
 ## Daily builds
 Site is set up to be hosted in Cloudflare. [A daily cron job triggers a new build](https://www.codemzy.com/blog/scheduling-builds-cloudflare) every day which is important mainly so that the item list shuffles order every day - the item at the top probably won't be at the top of the list tomorrow, and no one should get stuck at the bottom either. Remove the `shuffle` filter from the item list display in index.njk if you don't want this.
 
