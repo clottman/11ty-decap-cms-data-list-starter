@@ -7,8 +7,14 @@ layout: layouts/home.njk
 
 <div class="solid-bg items">
   <ul>
+  {# use this to shuffle the item order on every build #}
   {% set shuffled = items | shuffle %}
   {%- for item in shuffled -%}
+
+  {# use this if you're not shuffling #}
+  {# items is the name of the folder in src/_data/ where your Decap collection items will go as individual json files #}
+  {# {%- for key, item in items %} #}
+
     <li>
       {% if item["image"] %}
         {% image item["image"], "", "img-item" %}
